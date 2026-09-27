@@ -1,0 +1,6 @@
+{
+  "name": "PocketForge AI — Autonomous AI Dark Factory",
+  "description": "Autonomous AI software dark factory for financial systems that plans, architects, implements, adversarially attacks, detects race conditions, self-repairs, and verifies with cryptographic evidence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
