@@ -125,7 +125,7 @@ export const Header: React.FC<HeaderProps> = ({
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              Autonomous Dark Factory engineered by BAND Agents (Seats 1, 2 &amp; 3)
+              Why code was written: architectural reasoning, rejected alternatives, and proof.
             </p>
           </div>
         </div>
