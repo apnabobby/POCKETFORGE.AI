@@ -1,51 +1,68 @@
-# Stage 1: Decision Memory AI Core Service
+# Stage 1: Core Flask REST API & SQLite Database Setup
 
-## 1. Stage Overview
-**Stage 1** delivers the verified, self-contained core service for **Decision Memory AI**.
-It includes:
-- **Decision Memory Engine**: Searchable architectural explanations answering *What decision was made*, *Why it was made*, *Rejected alternatives*, and *Supporting evidence citations*.
-- **Autonomous Software Factory Pipeline**: 6-agent orchestration loop (Planner, Architect, Builder, Adversarial Tester, Independent Verifier, Repairer).
-- **Wallet Financial Engine**: Minor-unit integer paise math, per-wallet serializable mutex queue, atomic snapshot rollback, and idempotency store.
-- **REST APIs & Health Endpoint**: `/api/health` and `/api/decisions`.
-- **Zero-Network Offline Ingress**: Operates 100% locally with sample deterministic corpus.
+## Stage Title and Goal
+**Stage 1: Core REST API, Database Engine & Table State Management**
+The goal of Stage 1 is to establish the backend foundation for *L'Étoile Noire Tablekeeper*, configuring the SQLite database, table entity models (id, name, capacity, station_id, status), and core REST API endpoints with integer sanity checks and status transitions.
 
----
-
-## 2. Dependencies & Build Verification
-This stage contains its own `package.json`, TypeScript configuration, and server runtime.
-
-### Clean Installation
-```bash
-npm install
-```
-
-### Type Checking & Lint
-```bash
-npm run lint
-```
-
-### Production Build
-```bash
-npm run build
-```
-
-### Run Locally
-```bash
-npm run start
-```
-The service will start on port `3000` (or `PORT` environment variable).
+## Contributors
+- **Google AI Studio**
+- **BAND**
 
 ---
 
-## 3. Verified Features in Stage 1
-1. **Developer Ingress**: Search bar for querying technical architectural decisions.
-2. **Four-Part Explanations**: What, Why, Rejected Alternatives, and Git/Issue citations.
-3. **Adversarial Test Suite**: 50 attack vectors proving race condition resistance and financial conservation.
-4. **Audit Dossier Export**: Formatted PDF and raw JSON evidence exports.
-5. **Clean Health Check**: Verifiable at `GET /api/health`.
+## Checklist of Completed Items
+- [x] Initialized Flask application with configurable environment variables.
+- [x] Configured SQLite database with seed data for Parisian fine dining tables (Terrace, Main Salon, Mezzanine).
+- [x] Implemented REST API endpoints for table listing, status mutation, and station queries.
+- [x] Added automated API unit tests validating status transitions and error cases.
+- [x] Integrated Google AI Studio and BAND contributor headers in all code files.
 
 ---
 
-## 4. Stage Status
-- **Build Status**: Verified PASS (`npm run build` succeeds).
-- **Runtime Dependency**: Zero outbound network requirement.
+## Files Created in Stage 1
+- `stage-1/app.py`: Flask application factory, database initialization, and REST API route handlers.
+- `stage-1/test_api.py`: Automated pytest/unittest suite verifying table endpoints, status updates, and error handling.
+- `stage-1/requirements.txt`: Python package requirements for Stage 1 (Flask, pytest).
+
+---
+
+## Features Added
+- **SQLite Database Setup**: Auto-seeded table schemas with station associations and capacity constraints.
+- **REST API Endpoints**:
+  - `GET /api/tables`: List all tables and current occupancy state.
+  - `GET /api/tables/<id>`: Get single table details.
+  - `POST /api/tables/<id>/status`: Atomically update table status (`AVAILABLE`, `OCCUPIED`, `RESERVED`, `DIRTY`).
+  - `GET /api/health`: System health and status check.
+- **Strict Invariants**: Validates table status transitions and capacity boundaries.
+
+---
+
+## Bugs Fixed in This Stage
+- Prevented invalid table status string mutations by enforcing an enumeration whitelist (`AVAILABLE`, `RESERVED`, `OCCUPIED`, `DIRTY`).
+- Ensured SQLite handles foreign key constraints and atomic connection rollbacks on database locked errors.
+
+---
+
+## How to Run and Test This Stage
+```bash
+cd stage-1
+pip install -r requirements.txt
+# Run the test suite
+python test_api.py
+# Run the Flask development server
+python app.py
+```
+
+---
+
+## Dependencies Needed
+- Python >= 3.10
+- Flask >= 3.0.0
+- pytest >= 8.0.0
+
+---
+
+## What Carries Over to Stage 2
+- The database schema and table entity model.
+- Core REST API endpoints (`/api/tables`, `/api/tables/<id>/status`).
+- Station grouping logic used to render the visual floorplan in Stage 2.
