@@ -18,19 +18,19 @@
 
 ---
 
-## 2. BAND Evidence & Artifacts
+## 2. Submission Artifacts & Compliance
 
 In strict compliance with **Hackathon Rule #4 (Generic Seat Mandates)** and **Rule #5 (BAND Desktop Room Export)**:
 
-- **BAND Desktop Room Session Export**:
-  - Direct JSON Session State: [`/band-export/pocketforge_room_session.json`](band-export/pocketforge_room_session.json)
+- **BAND Desktop Room Session Export (`/band-export/`)**:
+  - Direct JSON Session State: [`/band-export/band_room_session.json`](band-export/band_room_session.json)
   - Detailed Execution History & Agent Logs: [`/band-export/EXPORT_LOG.md`](band-export/EXPORT_LOG.md)
-- **Generic Standing Agent Mandates**:
+- **Generic Standing Agent Mandates (`/mandates/`)**:
   - Seat 1 (Planner / Architect): [`/mandates/seat_1_planner_architect.md`](mandates/seat_1_planner_architect.md)
   - Seat 2 (Implementer / Self-Healing): [`/mandates/seat_2_implementer_repair.md`](mandates/seat_2_implementer_repair.md)
   - Seat 3 (Adversarial Reviewer / Validator): [`/mandates/seat_3_adversarial_verifier.md`](mandates/seat_3_adversarial_verifier.md)
 
-*Notice: In compliance with hackathon rules, all standing mandates in `/mandates/` are 100% generic, containing zero track-specific jargon, tables, or route paths.*
+*Notice: In compliance with hackathon rules, all standing mandates in `/mandates/` are 100% generic, domain-agnostic, and contain zero track-specific jargon, tables, or route paths.*
 
 ---
 
@@ -50,7 +50,7 @@ In strict compliance with **Hackathon Rule #4 (Generic Seat Mandates)** and **Ru
 ```text
 .
 ├── band-export/
-│   ├── pocketforge_room_session.json # Full BAND Desktop room session export
+│   ├── band_room_session.json        # Exported BAND Desktop room session artifact
 │   └── EXPORT_LOG.md                 # Detailed chronological agent logs
 ├── mandates/
 │   ├── seat_1_planner_architect.md   # Generic Seat 1 mandate

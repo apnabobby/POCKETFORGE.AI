@@ -62,5 +62,5 @@
 ---
 
 ## Room Artifact Location
-- Complete JSON Session Export: `/band-export/pocketforge_room_session.json`
-- Generic Standing Mandates: `/mandates/`
+- Complete JSON Session Export: [`/band-export/band_room_session.json`](band-export/band_room_session.json)
+- Generic Standing Mandates: [`/mandates/`](mandates/)
