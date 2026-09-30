@@ -1,0 +1,96 @@
+{
+  "export_metadata": {
+    "platform": "BAND Desktop",
+    "version": "1.4.2",
+    "export_timestamp": "2026-09-30T05:42:00Z",
+    "session_id": "band-room-pocketforge-prod-9941",
+    "track": "Pocketful - Autonomous Financial Ledger & Dark Factory",
+    "compliance_verified": true
+  },
+  "room_participants": [
+    {
+      "seat_id": "SEAT_1",
+      "mandate": "mandates/seat_1_planner_architect.md",
+      "role": "Planner / Architect Agent",
+      "model": "gemini-2.5-pro",
+      "status": "COMPLETED",
+      "invocations": 14
+    },
+    {
+      "seat_id": "SEAT_2",
+      "mandate": "mandates/seat_2_implementer_repair.md",
+      "role": "Implementer / Self-Healing Agent",
+      "model": "gemini-2.5-pro",
+      "status": "COMPLETED",
+      "invocations": 28
+    },
+    {
+      "seat_id": "SEAT_3",
+      "mandate": "mandates/seat_3_adversarial_verifier.md",
+      "role": "Adversarial Reviewer / Validator Gatekeeper",
+      "model": "gemini-2.5-flash",
+      "status": "COMPLETED",
+      "invocations": 52
+    }
+  ],
+  "session_timeline": [
+    {
+      "timestamp": "2026-09-30T05:30:10Z",
+      "seat": "SEAT_1",
+      "event": "TASK_DECOMPOSITION",
+      "summary": "Decomposed Pocketful wallet brief into 5 core mathematical invariants and typed transfer contracts."
+    },
+    {
+      "timestamp": "2026-09-30T05:32:45Z",
+      "seat": "SEAT_2",
+      "event": "CODE_SYNTHESIS_STAGE_1",
+      "summary": "Synthesized initial SQLite double-entry ledger and REST API endpoints in stage-1/app.py."
+    },
+    {
+      "timestamp": "2026-09-30T05:35:12Z",
+      "seat": "SEAT_2",
+      "event": "UI_DASHBOARD_STAGE_2",
+      "summary": "Constructed interactive transfer ledger dashboard with real-time balance metrics in stage-2/."
+    },
+    {
+      "timestamp": "2026-09-30T05:37:30Z",
+      "seat": "SEAT_3",
+      "event": "RED_TEAM_ATTACK_DETECTED_FLAW",
+      "summary": "Detected race condition (CWE-362) under simultaneous concurrent double-spend attempts."
+    },
+    {
+      "timestamp": "2026-09-30T05:39:15Z",
+      "seat": "SEAT_2",
+      "event": "AUTONOMOUS_PATCH_APPLIED_STAGE_3",
+      "summary": "Synthesized serializable mutex locking, minor-unit (paise) integer constraint, and idempotency cache in stage-3/."
+    },
+    {
+      "timestamp": "2026-09-30T05:41:20Z",
+      "seat": "SEAT_3",
+      "event": "FULL_STRESS_VERIFICATION_STAGE_4",
+      "summary": "Executed 50-vector adversarial attack battery in dark_factory.py. 50/50 vectors PASSED with 100% money conservation."
+    },
+    {
+      "timestamp": "2026-09-30T05:42:00Z",
+      "seat": "SEAT_3",
+      "event": "FORMAL_SIGN_OFF",
+      "summary": "Generated cryptographic evidence seal. Final stage-4 release certified for production."
+    }
+  ],
+  "verification_summary": {
+    "total_attack_vectors": 50,
+    "vectors_passed": 50,
+    "vectors_failed": 0,
+    "money_conservation_percent": 100.0,
+    "cwe_vulnerabilities_mitigated": [
+      "CWE-362",
+      "CWE-284",
+      "CWE-682",
+      "CWE-294",
+      "CWE-820",
+      "CWE-400",
+      "CWE-1335",
+      "CWE-839"
+    ]
+  }
+}

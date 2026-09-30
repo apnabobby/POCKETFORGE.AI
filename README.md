@@ -1,92 +1,127 @@
-# Decision Memory AI & Dark Factory
-> **Autonomous Software Engineering Dark Factory with Explainable Decision Memory, Red-Team Adversarial Matrix, and Cryptographic Evidence Seals.**
+# PocketForge AI — Autonomous Wallet & Double-Entry Ledger Dark Factory
+> **WeAreDevelopers x BAND Hackathon Entry**
+> **Track: Pocketful (Autonomous Wallet & Transfer Ledger)**
 >
 > **Project Contributors:**
-> - **BAND** (Seat 1: Planner/Architect, Seat 2: Implementer, Seat 3: Reviewer/Validator)
+> - **BAND Agents** (Seat 1: Planner/Architect, Seat 2: Implementer, Seat 3: Reviewer/Validator)
 
 ---
 
-## 1. System Overview
-**Decision Memory AI / PocketForge Dark Factory** is an autonomous software engineering system that receives engineering tasks, decomposes architecture, synthesizes code, subjects it to adversarial attack batteries, performs self-repair, audits state invariants, and produces cryptographic proof seals.
+## 1. System Overview & Pocketful Track Alignment
 
-In addition to code generation, it provides **Decision Memory**: an architectural search engine answering *what* was built, *why* it was chosen, *which alternatives were rejected*, and *which empirical commits/PRs validate the decision*.
-
----
-
-## 2. Key Architecture & Features
-
-1. **Autonomous Multi-Agent Pipeline**:
-   - `Planner / Architect (Seat 1)`: Invariant modeling and task decomposition.
-   - `Implementer (Seat 2)`: Code synthesis, mutex locking, and integer math primitives.
-   - `Reviewer / Validator (Seat 3)`: Adversarial testing and invariant proofs.
-   - `Self-Repair Agent`: Autonomous patch synthesis and re-verification.
-
-2. **Integer Paise Wallet Engine & 5 Core Invariants**:
-   - **Conservation of Total Money**: $\sum \text{Balances} = \text{Constant (₹18,500.00)}$.
-   - **Non-Negative Balances**: $\text{Balance} \ge 0$.
-   - **Integer Minor Units**: Zero IEEE-754 floating-point drift.
-   - **Strict Idempotency Monotonicity**: Duplicate retries return cached receipts without balance mutation.
-   - **Atomic Two-Phase Rollback**: Debits and credits are executed as a single indivisible unit.
-
-3. **Threat Intelligence Heatmap**:
-   - 50-attack vector matrix mapped against Common Weakness Enumerations (**CWE-362**, **CWE-284**, **CWE-682**, etc.) with real-time pass/fail topology.
-
-4. **Cryptographic Evidence Ledger**:
-   - SHA-256 state seal for every invariant proof and test suite run.
-
-5. **100% Offline Compatible**:
-   - Deterministic local decision memory corpus requiring zero outbound network access.
+**PocketForge AI** is an autonomous software engineering dark factory engineered exclusively for the **Pocketful** hackathon track. It solves the critical vulnerabilities inherent in distributed payment rails:
+1. **Zero Double-Spending (CWE-362)**: Per-wallet serializable mutex locks and atomic isolation.
+2. **Zero Currency Drift (CWE-1335)**: Pure integer minor-unit balance engine (paise/cents) eliminating IEEE-754 floating-point inaccuracies.
+3. **Conservation of Total Money (CWE-682)**: Mathematically enforces $\sum \text{Balances} = \text{Constant}$ across all closed-loop transfers.
+4. **Strict Idempotency Monotonicity (CWE-294 / CWE-400)**: Dropped-ACK retries and parallel bursts return cached receipts without balance mutation.
+5. **Atomic Two-Phase Rollback (CWE-284)**: Mid-transaction crashes and network failures roll back cleanly.
 
 ---
 
-## 3. Repository Structure
+## 2. BAND Evidence & Artifacts
+
+In strict compliance with **Hackathon Rule #4 (Generic Seat Mandates)** and **Rule #5 (BAND Desktop Room Export)**:
+
+- **BAND Desktop Room Session Export**:
+  - Direct JSON Session State: [`/band-export/pocketforge_room_session.json`](band-export/pocketforge_room_session.json)
+  - Detailed Execution History & Agent Logs: [`/band-export/EXPORT_LOG.md`](band-export/EXPORT_LOG.md)
+- **Generic Standing Agent Mandates**:
+  - Seat 1 (Planner / Architect): [`/mandates/seat_1_planner_architect.md`](mandates/seat_1_planner_architect.md)
+  - Seat 2 (Implementer / Self-Healing): [`/mandates/seat_2_implementer_repair.md`](mandates/seat_2_implementer_repair.md)
+  - Seat 3 (Adversarial Reviewer / Validator): [`/mandates/seat_3_adversarial_verifier.md`](mandates/seat_3_adversarial_verifier.md)
+
+*Notice: In compliance with hackathon rules, all standing mandates in `/mandates/` are 100% generic, containing zero track-specific jargon, tables, or route paths.*
+
+---
+
+## 3. Stage-Wise Progression Summary (Stages 1 to 4)
+
+| Stage | Focus Area | Key Architectural Deliverables | Verification Suite |
+| :--- | :--- | :--- | :--- |
+| **Stage 1** | **Core Ledger & REST API** | Relational SQLite double-entry tables (`wallets`, `ledger_transactions`), balance lookup, positive integer validation. | `stage-1/test_api.py` unit tests pass. |
+| **Stage 2** | **Visual Transfer Dashboard** | Jinja2 dashboard UI, conserved money metric card, prefillable wallet selection, live audit stream. | `stage-2/test_ui.py` render tests pass. |
+| **Stage 3** | **Concurrency & Idempotency** | Serializable mutex locking (`TRANSFER_LOCK`), idempotency cache, atomic `BEGIN IMMEDIATE` rollbacks. | `stage-3/test_wallet.py` (10 concurrent threads) passes. |
+| **Stage 4** | **Autonomous Dark Factory & Deployment** | Autonomous Red-Team exploit suite (`dark_factory.py`) with 50 adversarial attack vectors, Vercel serverless integration (`index.py`, `vercel.json`). | `python dark_factory.py` (50/50 vectors PASS). |
+
+---
+
+## 4. Repository Structure
 
 ```text
 .
-├── src/                           # React UI, Components, and Core Services
-│   ├── components/                # Threat Heatmap, Agent Pipeline, Decision Memory UI
-│   ├── services/                  # Wallet Engine, Adversarial Runner, Decision Memory
-│   └── types/                     # TypeScript Interfaces
-├── stage-1/                       # Self-contained buildable Stage 1 service
-├── docs/                          # BAND Compliance, Mandates, Architecture & Video Checklists
-│   ├── band-agent-mandates.md     # 3 Generic coding-agent standing mandates
-│   ├── band-factory-description.md# Dark Factory system architecture
-│   ├── architecture.md            # Financial invariants & multi-tier design
-│   ├── offline-build.md           # Zero-network container build recipe
-│   ├── submission-checklist.md    # Compliance checklist & disqualification safety
-│   └── video-checklist.md         # BAND Desktop video recording checklist
-├── server.ts                      # Express API backend + Vite development middleware
-├── package.json                   # Dependencies & build scripts
-├── Dockerfile                     # Offline-capable container specification
-└── README.md                      # Main project documentation
+├── band-export/
+│   ├── pocketforge_room_session.json # Full BAND Desktop room session export
+│   └── EXPORT_LOG.md                 # Detailed chronological agent logs
+├── mandates/
+│   ├── seat_1_planner_architect.md   # Generic Seat 1 mandate
+│   ├── seat_2_implementer_repair.md  # Generic Seat 2 mandate
+│   └── seat_3_adversarial_verifier.md# Generic Seat 3 mandate
+├── stage-1/                          # Stage 1: Core Double-Entry Ledger REST API
+│   ├── README.md
+│   ├── app.py
+│   ├── test_api.py
+│   └── requirements.txt
+├── stage-2/                          # Stage 2: Transfer Dashboard UI
+│   ├── README.md
+│   ├── app.py
+│   ├── templates/index.html
+│   ├── static/css/style.css
+│   ├── static/js/app.js
+│   ├── test_ui.py
+│   └── requirements.txt
+├── stage-3/                          # Stage 3: Concurrency Locking & Race Defense
+│   ├── README.md
+│   ├── app.py
+│   ├── test_wallet.py
+│   └── requirements.txt
+├── stage-4/                          # Stage 4: Dark Factory Stress Runner & Serverless
+│   ├── README.md
+│   ├── app.py
+│   ├── dark_factory.py
+│   ├── index.py
+│   ├── vercel.json
+│   ├── templates/index.html
+│   ├── static/
+│   └── requirements.txt
+├── app.py                            # Production application (synchronized with Stage 4)
+├── dark_factory.py                   # 50-vector Autonomous stress runner
+├── index.py                          # Vercel serverless gateway
+├── vercel.json                       # Vercel deployment routing
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Main documentation
 ```
 
 ---
 
-## 4. Quick Start & Execution
+## 5. Quick Start & Execution
 
-### Local Development
+### A. Run Autonomous Dark Factory Stress Runner (50 Vectors)
 ```bash
-npm install
-npm run dev
+# Run the 50-vector adversarial red-team battery
+python3 dark_factory.py
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+**Expected Output:**
+```text
+===========================================================================
+🏭 POCKETFORGE AI — AUTONOMOUS DARK FACTORY STRESS RUNNER
+   Track: Pocketful | Invariants: 5 Core Theorems | Vectors: 50
+   Contributors: BAND Agents (Seat 1, Seat 2, Seat 3)
+===========================================================================
+[✅ PASS] [CWE-362] RACE_DOUBLE_SPEND_BURST_1: Exactly 1 succeeded, 4 rejected cleanly
+...
+---------------------------------------------------------------------------
+📊 STRESS SUMMARY: 50/50 VECTORS PASSED (0 FAILS)
+   Total Money Conservation: 100.0% Verified
+===========================================================================
+```
 
-### Clean Offline Docker Container
+### B. Run Local Development Server
 ```bash
-# Build Docker image
-docker build -t decision-memory-ai:latest .
-
-# Run in an isolated container without network access
-docker run --rm -p 3000:3000 --network none decision-memory-ai:latest
+python3 app.py
 ```
-
-### Health Check Endpoint
-```bash
-curl http://localhost:3000/api/health
-```
+Navigate to [http://localhost:5000](http://localhost:5000) to view the live dashboard.
 
 ---
 
-## 5. Contributors
-- **BAND** (Seat 1: Planner/Architect, Seat 2: Implementer, Seat 3: Reviewer/Validator)
+## 6. Contributors
+- **BAND Agents** (Seat 1: Planner/Architect, Seat 2: Implementer, Seat 3: Reviewer/Validator)

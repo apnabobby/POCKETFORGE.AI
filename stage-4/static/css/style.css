@@ -1,0 +1,19 @@
+/* Stage 2 - Pocketful Wallet Dashboard Styles
+   Contributors: BAND Agents (Seat 1, Seat 2, Seat 3) */
+
+body {
+    background-color: #0b0f19;
+    color: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wallet-card {
+    transition: all 0.2s ease-in-out;
+}
+
+.wallet-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
