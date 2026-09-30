@@ -120,12 +120,12 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="text-xl font-bold tracking-tight text-white font-mono">
                 DECISION MEMORY<span className="text-cyan-400">.AI</span>
               </span>
-              <span className="text-[11px] font-semibold text-slate-400 border border-slate-700/60 rounded px-1.5 py-0.2 bg-slate-900/60">
-                POCKETFORGE CORE
+              <span className="text-[11px] font-bold text-amber-300 border border-amber-600/80 rounded px-2 py-0.5 bg-amber-950/60 font-mono tracking-wide">
+                BAND POWERED
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              Why code was written: architectural reasoning, rejected alternatives, and proof.
+              Autonomous Dark Factory engineered by BAND Agents (Seats 1, 2 &amp; 3)
             </p>
           </div>
         </div>

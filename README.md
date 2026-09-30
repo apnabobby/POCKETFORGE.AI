@@ -2,8 +2,7 @@
 > **Autonomous Software Engineering Dark Factory with Explainable Decision Memory, Red-Team Adversarial Matrix, and Cryptographic Evidence Seals.**
 >
 > **Project Contributors:**
-> - **Google AI Studio**
-> - **BAND**
+> - **BAND** (Seat 1: Planner/Architect, Seat 2: Implementer, Seat 3: Reviewer/Validator)
 
 ---
 
@@ -90,5 +89,4 @@ curl http://localhost:3000/api/health
 ---
 
 ## 5. Contributors
-- **Google AI Studio**
-- **BAND**
+- **BAND** (Seat 1: Planner/Architect, Seat 2: Implementer, Seat 3: Reviewer/Validator)

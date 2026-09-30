@@ -160,7 +160,7 @@ export class FactoryOrchestrator {
     this.agents = [
       {
         id: 'PLANNER',
-        name: 'Planner Agent',
+        name: 'Planner Agent (BAND Seat 1)',
         role: 'Requirements Extraction & Risk Modeling',
         avatarIcon: 'Workflow',
         status: 'idle',
@@ -169,7 +169,7 @@ export class FactoryOrchestrator {
       },
       {
         id: 'ARCHITECT',
-        name: 'Architect Agent',
+        name: 'Architect Agent (BAND Seat 1)',
         role: 'System Design & Invariant Definition',
         avatarIcon: 'Layers',
         status: 'idle',
@@ -178,7 +178,7 @@ export class FactoryOrchestrator {
       },
       {
         id: 'BUILDER',
-        name: 'Implementation Agent',
+        name: 'Implementer Agent (BAND Seat 2)',
         role: 'Autonomous Backend Code Generation',
         avatarIcon: 'Code2',
         status: 'idle',
@@ -187,7 +187,7 @@ export class FactoryOrchestrator {
       },
       {
         id: 'ADVERSARIAL_TESTER',
-        name: 'Adversarial Test Agent',
+        name: 'Adversarial Test Agent (BAND Seat 3)',
         role: 'Red-Team Attack & Exploit Engine',
         avatarIcon: 'Flame',
         status: 'idle',
@@ -196,7 +196,7 @@ export class FactoryOrchestrator {
       },
       {
         id: 'INDEPENDENT_VERIFIER',
-        name: 'Verification Agent',
+        name: 'Verification Agent (BAND Seat 3)',
         role: 'Independent Blue-Team Audit & Signoff',
         avatarIcon: 'ShieldCheck',
         status: 'idle',
@@ -205,7 +205,7 @@ export class FactoryOrchestrator {
       },
       {
         id: 'REPAIRER',
-        name: 'Repair Agent',
+        name: 'Repair Agent (BAND Seat 2)',
         role: 'Root Cause Diagnosis & Security Patching',
         avatarIcon: 'Wrench',
         status: 'idle',
