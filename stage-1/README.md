@@ -1,8 +1,12 @@
-# Stage 1: Core Flask REST API & SQLite Database Setup
+# Stage 1: Decision Memory AI & Dark Factory Core Service
 
 ## Stage Title and Goal
-**Stage 1: Core REST API, Database Engine & Table State Management**
-The goal of Stage 1 is to establish the backend foundation for *L'Étoile Noire Tablekeeper*, configuring the SQLite database, table entity models (id, name, capacity, station_id, status), and core REST API endpoints with integer sanity checks and status transitions.
+**Stage 1: Autonomous Dark Factory Architecture, Integer Paise Wallet Engine & Decision Memory Core**
+The goal of Stage 1 is to provide a self-contained, buildable service featuring:
+1. Autonomous multi-agent dark factory pipeline (Planner, Architect, Implementer, Reviewer, Repairer).
+2. Double-entry minor unit (paise) financial engine with mutex locks and two-phase rollback.
+3. Queryable Decision Memory engine with git commit and test citations.
+4. Visual Threat Intelligence Heatmap with CWE vulnerability topologies.
 
 ## Contributors
 - **Google AI Studio**
@@ -11,58 +15,40 @@ The goal of Stage 1 is to establish the backend foundation for *L'Étoile Noire 
 ---
 
 ## Checklist of Completed Items
-- [x] Initialized Flask application with configurable environment variables.
-- [x] Configured SQLite database with seed data for Parisian fine dining tables (Terrace, Main Salon, Mezzanine).
-- [x] Implemented REST API endpoints for table listing, status mutation, and station queries.
-- [x] Added automated API unit tests validating status transitions and error cases.
-- [x] Integrated Google AI Studio and BAND contributor headers in all code files.
+- [x] Initialized Vite + React + TypeScript single-page application with Express backend (`server.ts`).
+- [x] Built the 5 core financial invariants and wallet simulator (`src/services/walletEngine.ts`).
+- [x] Implemented local deterministic Decision Memory retrieval engine (`src/services/decisionMemory.ts`).
+- [x] Implemented 50-attack adversarial test suite (`src/services/adversarialRunner.ts`).
+- [x] Implemented Visual Threat Intelligence Heatmap (`src/components/ThreatIntelligenceHeatmap.tsx`).
+- [x] Generated cryptographic SHA-256 evidence audit trail (`src/services/evidenceLedger.ts`).
+- [x] Verified independent compilation with `npm run build` and `npm run lint`.
 
 ---
 
-## Files Created in Stage 1
-- `stage-1/app.py`: Flask application factory, database initialization, and REST API route handlers.
-- `stage-1/test_api.py`: Automated pytest/unittest suite verifying table endpoints, status updates, and error handling.
-- `stage-1/requirements.txt`: Python package requirements for Stage 1 (Flask, pytest).
+## Files in Stage 1
+- `stage-1/src/`: Complete React SPA source code.
+- `stage-1/server.ts`: Express API server with offline decision memory and optional Gemini integration.
+- `stage-1/package.json`: NPM package configuration.
+- `stage-1/tsconfig.json`: TypeScript configuration.
+- `stage-1/vite.config.ts`: Vite build tooling setup.
+- `stage-1/index.html`: Client web entrypoint.
 
 ---
 
-## Features Added
-- **SQLite Database Setup**: Auto-seeded table schemas with station associations and capacity constraints.
-- **REST API Endpoints**:
-  - `GET /api/tables`: List all tables and current occupancy state.
-  - `GET /api/tables/<id>`: Get single table details.
-  - `POST /api/tables/<id>/status`: Atomically update table status (`AVAILABLE`, `OCCUPIED`, `RESERVED`, `DIRTY`).
-  - `GET /api/health`: System health and status check.
-- **Strict Invariants**: Validates table status transitions and capacity boundaries.
-
----
-
-## Bugs Fixed in This Stage
-- Prevented invalid table status string mutations by enforcing an enumeration whitelist (`AVAILABLE`, `RESERVED`, `OCCUPIED`, `DIRTY`).
-- Ensured SQLite handles foreign key constraints and atomic connection rollbacks on database locked errors.
-
----
-
-## How to Run and Test This Stage
+## How to Run & Verify
 ```bash
 cd stage-1
-pip install -r requirements.txt
-# Run the test suite
-python test_api.py
-# Run the Flask development server
-python app.py
+npm install
+npm run build
+npm run dev
 ```
 
 ---
 
 ## Dependencies Needed
-- Python >= 3.10
-- Flask >= 3.0.0
-- pytest >= 8.0.0
-
----
-
-## What Carries Over to Stage 2
-- The database schema and table entity model.
-- Core REST API endpoints (`/api/tables`, `/api/tables/<id>/status`).
-- Station grouping logic used to render the visual floorplan in Stage 2.
+- Node.js >= 20
+- React 19
+- Vite 8
+- Express 4
+- Lucide React
+- Tailwind CSS

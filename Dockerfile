@@ -1,23 +1,38 @@
-# Stage 4 - Dockerfile for Tablekeeper Container
+# Stage 1 Dockerfile - Decision Memory AI & Dark Factory
 # Contributors: Google AI Studio, BAND
 
-FROM python:3.11-slim
+FROM node:20-slim AS builder
 
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# Install dependencies first for caching
+COPY package*.json ./
+RUN npm ci
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
+# Copy application sources
 COPY . .
 
-ENV PORT=5000
-ENV PYTHONUNBUFFERED=1
+# Build production assets
+RUN npm run build
 
-EXPOSE 5000
+# Runtime container
+FROM node:20-slim AS runner
 
-CMD ["python", "app.py"]
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/server.ts ./server.ts
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
+
+# Install tsx globally or as local runner for server.ts
+RUN npm install -g tsx
+
+EXPOSE 3000
+
+CMD ["tsx", "server.ts"]
