@@ -83,11 +83,9 @@ In strict compliance with **Hackathon Rule #4 (Generic Seat Mandates)** and **Ru
 │   ├── templates/index.html
 │   ├── static/
 │   └── requirements.txt
-├── app.py                            # Production application (synchronized with Stage 4)
-├── dark_factory.py                   # 50-vector Autonomous stress runner
-├── index.py                          # Vercel serverless gateway
-├── vercel.json                       # Vercel deployment routing
-├── requirements.txt                  # Python dependencies
+├── src/                              # Full React SPA Application (Decision Memory AI)
+├── server.ts                         # Express + Vite server (Port 3000)
+├── package.json
 └── README.md                         # Main documentation
 ```
 
@@ -97,7 +95,8 @@ In strict compliance with **Hackathon Rule #4 (Generic Seat Mandates)** and **Ru
 
 ### A. Run Autonomous Dark Factory Stress Runner (50 Vectors)
 ```bash
-# Run the 50-vector adversarial red-team battery
+# Run the 50-vector adversarial red-team battery in Stage 4
+cd stage-4
 python3 dark_factory.py
 ```
 **Expected Output:**
@@ -115,11 +114,11 @@ python3 dark_factory.py
 ===========================================================================
 ```
 
-### B. Run Local Development Server
+### B. Run Full Application (Decision Memory AI & Dark Factory Dashboard)
 ```bash
-python3 app.py
+npm run dev
 ```
-Navigate to [http://localhost:5000](http://localhost:5000) to view the live dashboard.
+Navigate to the running app to view the live dashboard on Port 3000.
 
 ---
 
